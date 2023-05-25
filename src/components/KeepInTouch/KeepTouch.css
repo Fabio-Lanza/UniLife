@@ -1,0 +1,72 @@
+.keep-touch-container{
+    display: flex;
+    width: 100%;
+    height: 374px;
+    background-color: var(--main);
+    margi: 0 auto;
+    padding: 80px 100px;
+    color: #fff;
+  }
+  
+  .keep-touch{
+    flex: 1;
+    margin-left: 180px;
+  }
+  
+  .keep-touch h3{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .keep-touch p{
+    width: 440px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+  
+  .keep-touch input{
+  width: 440px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  padding-left: 15px;
+  }
+  
+  .keep-touch input::placeholder{
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--gray-dark);
+  }
+  
+  .socialize{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin-left: 350px;
+  }
+  
+  .socialize h3{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .socialize svg{
+    width: 30px;
+    height: 30px;
+  }
+  
+  .socialize span{
+    font-size: 20px;
+    font-weight: 300;
+  }
+  
+  .social-link{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
