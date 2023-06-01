@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import banner from "../../assets/images/downtown.jpg";
-import SearchBar from "../../components/SearchBar/SearchBAr";
+import SearchCity from "../../components/SearchForCity/SearchCity";
 import CityCards from "../../components/CityCards/CityCards";
 import searchIcon from "../../assets/images/search-icon.png";
 import compareIcon from "../../assets/images/compare-icon.png";
@@ -9,24 +9,17 @@ import billsIcon from "../../assets/images/bills-icon.png";
 import bestSelectionIcon from "../../assets/images/bestSelectionIcon.png";
 import bestSelectionPhoto from "../../assets/images/bestSelectionPhoto.png";
 import heartIcon from "../../assets/images/heartIcon.png";
+import TopBanner from "../../components/TopBanner/TopBanner";
 
 
 function Home() {
   return (
     <main className="home-container">
       {/* ---Intro */}
-      <section>
-        <div className="banner">
-          <img src={banner} alt="" />
-
-          <div className="banner-text">
-            <p>Find students homes with bills included</p>
-            <p>A simple and faster way to search for student accommodation</p>
-          </div>
-        </div>
-        {/* ---Search-bar */}
-        <SearchBar />
-      </section>
+      <TopBanner 
+      title="Find students homes with bills included" 
+      subTitle="A simple and faster way to search for student accommodation"/>
+      <SearchCity />
 
       {/* ---City List */}
       <section>

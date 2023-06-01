@@ -1,12 +1,13 @@
 import React from 'react'
-import './SearchBar.css'
+import './SearchCity.css'
 
 
-function SearchBar() {
-    
+function SearchCity() {
+
   return (
+   
     <div className='searchBar-container'>
-    <form className='searchBar-form'>
+    <form className='searchCity-form'>
         <input type="text" placeholder='Search by city' />
         <button>Find Homes</button>
     </form>
@@ -14,4 +15,4 @@ function SearchBar() {
   )
 }
 
-export default SearchBar
+export default SearchCity

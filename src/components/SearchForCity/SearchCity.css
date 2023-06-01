@@ -7,7 +7,7 @@
     margin: 0 auto;
 }
 
-.searchBar-form{
+.searchCity-form{
     display: flex;
    justify-content: center;
     margin-top: -70px;
@@ -15,7 +15,7 @@
     z-index: 100;
 }
 
-.searchBar-form input{
+.searchCity-form input{
     padding: 0 10px;
     border: 1px solid var(--gray);
     border-radius: 12px;
@@ -26,12 +26,12 @@
     font-size: 20px;
     letter-spacing: 2px;
 }
-.searchBar-form input::placeholder{
+.searchCity-form input::placeholder{
     color: #ced3d8;
     font-size: 18px;
 }
 
-.searchBar-form button{
+.searchCity-form button{
     width: 345px;
     border-radius: 12px;
     border: none;

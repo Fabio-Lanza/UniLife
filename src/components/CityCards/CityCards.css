@@ -11,6 +11,7 @@
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   z-index: 100;
+  text-decoration: none;
 }
 
 .city-content img {
