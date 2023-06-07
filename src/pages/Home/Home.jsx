@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 import banner from "../../assets/images/downtown.jpg";
 import SearchCity from "../../components/SearchForCity/SearchCity";
 import CityCards from "../../components/CityCards/CityCards";
@@ -11,18 +12,25 @@ import bestSelectionPhoto from "../../assets/images/bestSelectionPhoto.png";
 import heartIcon from "../../assets/images/heartIcon.png";
 import TopBanner from "../../components/TopBanner/TopBanner";
 
-
 function Home() {
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <main className="home-container">
       {/* ---Intro */}
-      <TopBanner 
-      title="Find students homes with bills included" 
-      subTitle="A simple and faster way to search for student accommodation"/>
+      <TopBanner
+        title="Find students homes with bills included"
+        subTitle="A simple and faster way to search for student accommodation"
+      />
       <SearchCity />
 
       {/* ---City List */}
-      <section>
+      <section id="cityList">
         <div className="city-container">
           <h2>Student accommodations in our top cities</h2>
           <CityCards />
@@ -78,12 +86,15 @@ function Home() {
               <div className="content">
                 <h3>Your favorite</h3>
                 <p>
-                  Shortlist your favourite properties and send enquiries in one
+                  Shortlist your favorite properties and send enquiries in one
                   click.
                 </p>
               </div>
             </div>
-            <button className="search-compare-btn">Search & Compare</button>
+
+            <button className="search-compare-btn" onClick={scrollTop}>
+              Search & Compare
+            </button>
           </div>
           {/* --right-side */}
           <div className="right-side">

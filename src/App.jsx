@@ -1,7 +1,6 @@
-import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import KeepTouch from "./components/KeepInTouch/KeepTouch";
+import NewsLetter from "./components/NewsLetter/NewsLetter";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AllCities from "./pages/AllCities/AllCities";
@@ -18,7 +17,7 @@ function App() {
         <Route path="/homeDetails/:detailsId" element={<HomeDetailsPage />} />
         <Route path="/cityDetails/:cityId" element={<CityDetails />} />
       </Routes>
-      <KeepTouch />
+      <NewsLetter />
       <Footer />
     </BrowserRouter>
   );

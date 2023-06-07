@@ -1,10 +1,10 @@
 import React from 'react'
-import './KeepTouch.css'
+import './NewsLetter.css'
 import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { AiFillTwitterCircle } from "react-icons/ai";
 
-function KeepTouch() {
+function NewsLetter() {
 
   return (
      <div className="keep-touch-container">
@@ -37,4 +37,4 @@ function KeepTouch() {
   )
 }
 
-export default KeepTouch
+export default NewsLetter

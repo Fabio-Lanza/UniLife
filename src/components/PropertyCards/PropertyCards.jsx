@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./SingleCity.css";
+import "./PropertyCards.css";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { BiBed } from "react-icons/bi";
@@ -8,7 +8,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
 import testimonial from "../../assets/images/testimonial.png";
 
-function SingleCityCards() {
+function PropertyCards() {
   const [propertyCity, setPropertyCity] = useState("");
   const [propertyCityDetails, setPropertyCityDetails] = useState([]);
   const baseUrl = import.meta.env.VITE_BASE_URL;
@@ -94,4 +94,4 @@ function SingleCityCards() {
   );
 }
 
-export default SingleCityCards;
+export default PropertyCards;

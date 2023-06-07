@@ -36,6 +36,7 @@
     font-weight: 500;
     margin-top: 60px ;
   }
+
   .allCities-grid {
     height: 70vh;
     width: 82%;
@@ -54,6 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--secondary);
   }
 
   .allCities-content:hover{

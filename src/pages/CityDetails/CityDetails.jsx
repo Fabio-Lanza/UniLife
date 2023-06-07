@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import TopBanner from "./../../components/TopBanner/TopBanner";
 import SearchForRooms from "../../components/SearchForRooms/SearchForRooms";
-import SingleCityCards from "../../components/SingleCityCards/SingleCityCards";
+import PropertyCards from "../../components/PropertyCards/PropertyCards";
 
 function CityDetails() {
   const [singleCity, setSingleCity] = useState("");
@@ -30,7 +30,7 @@ function CityDetails() {
       />
       <SearchForRooms />
 
-      <SingleCityCards />
+      <PropertyCards />
     </div>
   );
 }

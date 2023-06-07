@@ -15,7 +15,7 @@
     z-index: 100;
 }
 
-.searchCity-form input{
+.searchCity-form select{
     padding: 0 10px;
     border: 1px solid var(--gray);
     border-radius: 12px;
@@ -41,3 +41,10 @@
     margin-top: 40px;
     cursor: pointer;
 }
+
+.searchCity-form select option{
+   background-color: rgba(10, 10, 10, 0.8);
+   color: #fff;
+   font-size: 18px;
+}
+
