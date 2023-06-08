@@ -9,6 +9,8 @@ function SearchForRooms({ properties, setProperties, cityId}) {
   const [queryState, setQueryState] = useState('');
 
   const numCount = [1, 2, 3, 4, 5, 6]
+  const maxPrice = [1000, 1500, 2000, 2500, 3000]
+  const homeType = ["Detached", "Semi-Detached", "Apartment"]
 
   const filterProperties = ( bedroom)=>{ console.log(bedroom)
     const query={
@@ -65,12 +67,14 @@ function SearchForRooms({ properties, setProperties, cityId}) {
           <label>Max Price</label>
           <select>
           <option selected>Max Price</option>
+          {maxPrice.map((item)=> <option>{item}</option>)}
           </select>
         </div>
         <div className="items">
           <label>Home Type</label>
           <select>
           <option selected>Home Type</option>
+          {homeType.map((item)=> <option>{item}</option>)}
           </select>
         </div>
       </div>
