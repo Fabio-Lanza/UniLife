@@ -26,10 +26,8 @@ function SearchCity() {
 
   const handleOptionClick = (e) => {
     setCityName(e.target.value);
-    // I know the city name
-    // how can I find the Id 
+   
    const matches = allCities.filter((item)=> item.name === e.target.value)
-    console.log(matches)
    setCityId(matches[0]._id)
 
   };
@@ -41,8 +39,7 @@ function SearchCity() {
     <form className='searchCity-form'>
         <select 
         onChange={handleOptionClick} 
-        type="text" 
-        placeholder='Search by city'> 
+        type="text" > 
         <option selected>Search for city</option>
         {allCities.map((cities)=> (
          <option key={cities.id} className='options'>

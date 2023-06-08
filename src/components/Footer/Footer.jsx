@@ -10,7 +10,7 @@ function Footer() {
         <p>Privacy & Cookie Policies</p>
       </div>
       <div className="copyRight">
-        <span>2023</span> &copy; Unilife
+        <span>2023</span> <span>&copy; Unilife</span>
       </div>
     </div>
   );

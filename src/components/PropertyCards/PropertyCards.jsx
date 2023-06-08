@@ -27,14 +27,14 @@ function PropertyCards() {
   }, []);
 
   return (
-    <div className="singleCity-container">
+    <div className="propertyCity-container">
       <h2>
         <span>{propertyCity.total}</span> homes in <span className="city-name">{propertyCity.city_name}</span>
       </h2>
 
-      <div className="singleCity-details">
+      <div className="propertyCity-details">
         {propertyCityDetails.map((cityDetails) => (
-          <div key={cityDetails.id}>
+          <div className="property-card" key={cityDetails.id}>
             <img src={cityDetails.images[0]} />
 
             <div className="price-accommodation">

@@ -71,3 +71,29 @@
   .allCities-grid a{
     text-decoration: none;
   }
+
+
+
+  /* ---media query LapTop */
+@media screen and (max-width: 1500px){
+ .allCities-grid {
+    height: 75vh;
+    width: 96%;
+  }
+
+  }
+  
+  
+  
+  /* ---media query Mobile */
+  @media screen and (max-width: 480px){
+    .allCities-grid {
+      height: 250vh;
+      width: 82%;
+      flex-wrap: wrap;
+      margin: 60px auto;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  
+  }
