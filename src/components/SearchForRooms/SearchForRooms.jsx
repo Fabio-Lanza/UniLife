@@ -2,52 +2,61 @@ import {useEffect, useState} from "react";
 import "./SearchForRooms.css";
 import axios from 'axios'
 
-function SearchForRooms() {
+function SearchForRooms({ properties, setProperties, cityId}) {
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  const [cityProperties, setCityProperties] = useState([]);
-  const [query, setQuery] = useState('');
+
+  const [cityProperties, setCityProperties] = useState(properties);
+  const [queryState, setQueryState] = useState('');
 
   const numCount = [1, 2, 3, 4, 5, 6]
 
-  const filterProperties = (id, bedroom,bathroom,price)=>{
+  const filterProperties = ( bedroom)=>{ console.log(bedroom)
     const query={
-      city_id:id,
+      city_id: cityId,
       bedroom_count:bedroom,
-      bathroom_count:bathroom,
-      rent:price 
-    }
+      bathroom_count: 2,
+      rent:5000, 
+  } 
+  console.log(query)
+  setQueryState(query)
   }
- 
- const handleBedroom = (e)=> {
- setQuery(e.target.value)
- }
- 
- 
-  useEffect(() => {
+
+  useEffect(() => { console.log('useEffect running')
+  console.log(queryState)
     axios
-      .post(`${baseUrl}/properties/filter`,{query})
+      .post(`${baseUrl}/properties/filter`,{queryState})
       .then((res) => {
         console.log(res.data)
-        setCityProperties(res.data.response)
+        if(res.data.status === 200){
+          setProperties(res.data.response)
+        }
+        // setCityProperties(res.data.response)
+        
         
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [queryState]);
+ 
 
+//  const handleBedroom = (e)=> {
+//  setQuery(e.target.value)
+//  }
+ 
+ 
 
   return (
     <div className="searchForRooms-container">
       <div className="searchRoom">
         <div className="items">
           <label>Min Bedroom</label>
-          <select onChange={()=>filterProperties(4)} >
+          <select onChange={(e)=>filterProperties(e.target.value)} >
           <option selected>Min Bedroom</option>
           {numCount.map((item)=> <option>{item}</option>)}
           </select>
         </div>
         <div className="items">
           <label>Min Bathroom</label>
-          <select>
+          <select >
           <option selected>Min Bathroom</option>
           {numCount.map((item)=> <option>{item}</option>)}
           </select>

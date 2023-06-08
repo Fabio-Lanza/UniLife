@@ -8,23 +8,26 @@ import { AiOutlineHome } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
 import testimonial from "../../assets/images/testimonial.png";
 
-function PropertyCards() {
+function PropertyCards({ propertyCityDetails }) {
   const [propertyCity, setPropertyCity] = useState("");
-  const [propertyCityDetails, setPropertyCityDetails] = useState([]);
+  //const [propertyCityDetails, setPropertyCityDetails] = useState([]);
   const baseUrl = import.meta.env.VITE_BASE_URL;
 
   const { cityId } = useParams();
 
-  useEffect(() => {
-    axios
-      .get(`${baseUrl}/properties/city/${cityId}`)
-      .then((res) => {
-        console.log(res.data.response);
-        setPropertyCity(res.data);
-        setPropertyCityDetails(res.data.response);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  
+
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`${baseUrl}/properties/city/${cityId}`)
+  //     .then((res) => {
+  //       console.log(res.data.response);
+  //       setPropertyCity(res.data);
+  //       setPropertyCityDetails(res.data.response);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   return (
     <div className="propertyCity-container">

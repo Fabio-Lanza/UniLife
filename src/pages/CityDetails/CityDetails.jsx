@@ -9,18 +9,24 @@ import PropertyCards from "../../components/PropertyCards/PropertyCards";
 function CityDetails() {
   const [singleCity, setSingleCity] = useState("");
   const { cityId } = useParams();
+  const [cityData, setCityData] = useState([]);
 
   const baseUrl = import.meta.env.VITE_BASE_URL;
 
+
   useEffect(() => {
     axios
-      .get(`${baseUrl}/cities/${cityId}`)
+      .get(`${baseUrl}/properties/city/${cityId}`)
       .then((res) => {
+        console.log(res.data.response);
         console.log(res.data);
-        setSingleCity(res.data);
+        
+        //setPropertyCity(res.data);
+        setCityData(res.data.response);
       })
       .catch((error) => console.log(error));
   }, []);
+
 
   return (
     <div>
@@ -28,9 +34,9 @@ function CityDetails() {
         title="Search Accommodation"
         subTitle="Whatever you’re after, we can help you find the right student accommodation for you. "
       />
-      <SearchForRooms />
+      <SearchForRooms properties={cityData} setProperties={setCityData} cityId={cityId}/>
 
-      <PropertyCards />
+      <PropertyCards propertyCityDetails={cityData}/>
     </div>
   );
 }
