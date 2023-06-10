@@ -165,6 +165,9 @@
 
 /* ---media query Mobile */
 @media screen and (max-width: 480px) {
+  .header-container{
+    height: 75px;
+  }
   .logo {
     margin-left: 20px;
   }
@@ -174,6 +177,8 @@
     font-weight: 500;
     margin-left: 10px;
   }
+
+ 
 
   .header-box {
     display: none;
@@ -189,10 +194,11 @@
     justify-content: center;
     gap: 20px;
     position: absolute;
-    top: 60px;
+    top: 75px;
     background: var(--secondary);
     color: #fff;
     cursor: pointer;
+    transition: all ease-in-out 0.2s;
   }
 
   .mobile-menu {
@@ -207,7 +213,6 @@
   }
 
   /* --- Modal --- */
-
   .modal-header {
     margin-left: 240px;
   }
