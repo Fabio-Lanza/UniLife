@@ -60,6 +60,14 @@
   .city-grid {
     width: 95%;
   }
+
+  .city-content {
+    width: 420px;
+  }
+  
+  .city-content img {
+    width: 420px;
+  }
 }
 
 /* ---media query Mobile */

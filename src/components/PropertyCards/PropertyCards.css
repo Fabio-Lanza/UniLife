@@ -161,17 +161,39 @@
   height: 400px;
 }
 
+
+
 /* ---media query LapTop */
 @media screen and (max-width: 1500px) {
   .propertyCity-details {
-    width: 92%;
+    width: 95%;
     gap: 30px;
-    margin: 100px 50px;
+    margin: 100px 30px;
   }
   .property-card {
-    width: 425px;
+    width: 415px;
   }
 
+  .propertyCity-details img {
+    width: 420px;
+  }
+  
+  .price-accommodation {
+    width: 420px;
+  }
+  
+  .furnished {
+    width: 420px;
+  }
+  
+  .address {
+    width: 420px;
+  }
+  
+  .viewHome-btn {
+    width: 420px;
+  }
+  
   .testimonial-banner {
     width: 95%;
     padding: 80px 100px;
@@ -251,7 +273,7 @@
 
   .testimonial-banner h2 {
     font-size: 30px;
-    width: 500px;
+    width: 350px;
     line-height: 50px;
   }
   .testimonial-banner p {
@@ -265,7 +287,7 @@
   }
 
   .testimonial-banner .right-side img {
-    width: 280px;
+    width: 340px;
     height: 240px;
   }
 }

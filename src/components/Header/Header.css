@@ -171,6 +171,22 @@
   cursor: pointer;
 }
 
+
+/* ---media query Mobile */
+@media screen and (max-width: 1500px){
+  .logo {
+    margin-left: 60px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-box {
+    margin-left: 800px;
+  }
+ 
+}
+
 /* ---media query Mobile */
 @media screen and (max-width: 480px) {
   .header-container{
@@ -185,7 +201,6 @@
     font-weight: 500;
     margin-left: 10px;
   }
-
 
   .header-box {
     display: none;

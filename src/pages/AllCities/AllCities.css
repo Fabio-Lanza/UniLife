@@ -77,8 +77,8 @@
   /* ---media query LapTop */
 @media screen and (max-width: 1500px){
  .allCities-grid {
-    height: 75vh;
-    width: 96%;
+    height: 95vh;
+    width: 90%;
   }
 
   }

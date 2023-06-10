@@ -17,7 +17,7 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
   return (
     <div className="propertyCity-container">
       <h2>
-        <span>{propertyCity.total}</span> homes in <span className="city-name">{propertyCity.city_name}</span>
+         Homes in <span className="city-name">{propertyCity.city_name}</span>
       </h2>
 
       <div className="propertyCity-details">
