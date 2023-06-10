@@ -49,11 +49,11 @@ function Header() {
         </div>
 
         <div className={toggle ? "header-box-mobile" : "hide"}>
-          <div className="shortlist">
+          <div className="shortlist-mobile">
             <BsSuitHeart />
             <span>Shortlist</span>
           </div>
-          <div className="contact">
+          <div className="contact-mobile">
             <BsEnvelope />
             <span onClick={() => setModalIsOpen(true)}>Contact Us</span>
           </div>
