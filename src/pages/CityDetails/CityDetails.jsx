@@ -10,6 +10,7 @@ function CityDetails() {
   const [singleCity, setSingleCity] = useState("");
   const { cityId } = useParams();
   const [cityData, setCityData] = useState([]);
+  const [propertyCity, setPropertyCity] = useState("");
 
   const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -21,7 +22,7 @@ function CityDetails() {
         console.log(res.data.response);
         console.log(res.data);
         
-        //setPropertyCity(res.data);
+        setPropertyCity(res.data);
         setCityData(res.data.response);
       })
       .catch((error) => console.log(error));
@@ -36,7 +37,7 @@ function CityDetails() {
       />
       <SearchForRooms properties={cityData} setProperties={setCityData} cityId={cityId}/>
 
-      <PropertyCards propertyCityDetails={cityData}/>
+      <PropertyCards propertyCityDetails={cityData} propertyCity={propertyCity} cityId={cityId}/>
     </div>
   );
 }

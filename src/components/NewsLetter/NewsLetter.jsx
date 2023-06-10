@@ -1,10 +1,18 @@
-import React from 'react'
+import {useState} from 'react'
 import './NewsLetter.css'
 import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { AiFillTwitterCircle } from "react-icons/ai";
 
 function NewsLetter() {
+  const [done, setDone] = useState(false);
+  const [input, setInput] = useState();
+
+  const handleSubmit = (e)=> {
+    e.preventDefault()
+    setDone(true)
+    setInput('')
+  }
 
   return (
      <div className="keep-touch-container">
@@ -14,8 +22,9 @@ function NewsLetter() {
               Curious about new offerings? Sign up for our weekly newsletter and
               stay informed.
             </p>
-            <form>
-              <input type="text" placeholder="Your email" />
+            <form onSubmit={handleSubmit}>
+              <input type="email" placeholder="Your email" value={input}/>
+              <span>{done && "Done! Thanks for subscribing to our Newsletter"}</span>
             </form>
           </div>
           <div className="socialize">

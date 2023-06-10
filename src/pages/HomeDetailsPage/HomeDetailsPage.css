@@ -41,7 +41,7 @@
 }
 
 .photos-container .photo-bottom img {
-  width: 251px;
+  width: 182px;
   height: 150px;
   border-radius: 12px;
 }
@@ -123,6 +123,7 @@
   font-size: 24px;
   font-weight: 700;
   margin-top: -20px;
+  margin-left: 250px;
   color: var(--secondary);
   border-right: none;
   border-left: none;
@@ -414,22 +415,26 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    flex: 1;
+    
+  }
+  
+  .photos-container .photo-top{
+    margin-left: -10px;
   }
 
   .photos-container .photo-top img {
-    width: 388px;
+    width: 405px;
     height: 240px;
   }
 
   .photos-container .photo-bottom {
     width: 390px;
-    gap: 10px;
+    gap: 5px;
     padding-bottom: 35px;
   }
 
   .photos-container .photo-bottom img {
-    width: 125px;
+    width: 99px;
     height: 100px;
   }
 
@@ -568,6 +573,76 @@
 .bedrooms-price {
   width: 390px;
 }
+
+
+  /* --- Modal --- */
+  .modal-box{
+    width: 350px;
+    height: 795px;
+    padding: 0px;
+    z-index: 100;
+  }
+  
+  
+.modal-header .contactUs {
+  display: flex;
+  margin-bottom: 25px;
+  margin-left: -170px;
+}
+
+.modal-header .contactUs h2 {
+  font-size: 32px;
+  margin-left: -70px;
+
+}
+
+.modal-header .contactUs img {
+  width: 60px;
+  height: 60px;
+}
+
+.modal-box .modal-header p {
+  font-size: 20px;
+  width: 290px;
+  line-height: 30px;
+  margin-bottom: 60px;
+  margin-left: -240px;
+}
+
+/* ---Form */
+.book-viewing-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-viewing-form .item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.book-viewing-form label {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+
+
+.book-viewing-form input {
+  width: 350px;
+}
+
+.book-viewing-form textarea {
+  width: 350px;
+}
+
+
+.book-viewing-submit-btn {
+  width: 350px;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+ 
 
 
 }

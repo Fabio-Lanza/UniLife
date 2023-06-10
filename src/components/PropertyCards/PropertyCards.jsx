@@ -8,12 +8,10 @@ import { AiOutlineHome } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
 import testimonial from "../../assets/images/testimonial.png";
 
-function PropertyCards({ propertyCityDetails }) {
-  const [propertyCity, setPropertyCity] = useState("");
-  //const [propertyCityDetails, setPropertyCityDetails] = useState([]);
+function PropertyCards({ propertyCityDetails, propertyCity }) {
   const baseUrl = import.meta.env.VITE_BASE_URL;
 
-  const { cityId } = useParams();
+  
 
   
 
@@ -28,6 +26,7 @@ function PropertyCards({ propertyCityDetails }) {
   //     })
   //     .catch((error) => console.log(error));
   // }, []);
+
 
   return (
     <div className="propertyCity-container">

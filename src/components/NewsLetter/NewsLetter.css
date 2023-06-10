@@ -25,13 +25,25 @@
   margin-bottom: 40px;
 }
 
+.keep-touch form{
+display: flex;
+flex-direction: column;
+}
+
 .keep-touch input {
   width: 440px;
   height: 48px;
   border-radius: 12px;
   border: none;
-  padding: 5px 15px;
+  padding: 0px 15px;
   font-size: 18px;
+  outline: none;
+}
+
+.keep-touch span{
+  font-size: 18px;
+  margin-top: 10px;
+  color: rgb(9, 238, 9);
 }
 
 .keep-touch input::placeholder {

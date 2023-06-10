@@ -9,11 +9,13 @@ import { FaBath } from "react-icons/fa";
 import { AiOutlineLeft, AiOutlineCheck } from "react-icons/ai";
 import { BsSuitHeart } from "react-icons/bs";
 import Modal from "react-modal";
-import houseIcon from '../../assets/images/houseIcon.png'
+import houseIcon from "../../assets/images/houseIcon.png";
 
 function HomeDetailsPage() {
   const [homeDetails, setHomeDetails] = useState([]);
+  const [cityDetail, setCityDetail] = useState('');
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [mainImage, setMainImage] = useState(null);
 
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const { detailsId } = useParams();
@@ -29,8 +31,8 @@ function HomeDetailsPage() {
     },
     overlay: { background: "rgba(1, 1, 1, 0.6)" },
   };
-
   Modal.setAppElement(document.getElementById("root"));
+
 
   useEffect(() => {
     axios
@@ -38,11 +40,23 @@ function HomeDetailsPage() {
       .then((res) => {
         console.log(res.data);
         setHomeDetails(res.data);
+        setMainImage(res.data.images[0]);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  
+
+  //   useEffect(() => {
+  //   axios
+  //     .get(`${baseUrl}/cities`)
+  //     .then((res) => {
+  //       console.log(res.data.response);  
+  //       setCityDetail(res.data.response);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+
+
   return (
     <main className="homeDetails-container">
       <Link to={`/cityDetails/${detailsId}`} className="back-search">
@@ -54,15 +68,18 @@ function HomeDetailsPage() {
         {/* --left-side */}
         <div className="photos-container">
           <div className="photo-top">
-            {homeDetails?.images
-              ?.map((item, index) => <img key={index} src={item} alt="" />)
-              .slice(0, 1)}
+            <img src={mainImage} alt="" />
           </div>
 
           <div className="photo-bottom">
-            {homeDetails?.images
-              ?.map((item, index) => <img key={index} src={item} alt="" />)
-              .slice(1, 4)}
+            {homeDetails?.images?.map((item, index) => (
+              <img
+                key={index}
+                src={item}
+                onClick={() => setMainImage(item)}
+                alt=""
+              />
+            ))}
           </div>
         </div>
 
@@ -117,7 +134,9 @@ function HomeDetailsPage() {
               <BsSuitHeart />
               Shortlist
             </button>
-            <button onClick={() => setModalIsOpen(true)}>Booking Viewing</button>
+            <button onClick={() => setModalIsOpen(true)}>
+              Booking Viewing
+            </button>
           </div>
         </div>
       </div>
@@ -172,7 +191,7 @@ function HomeDetailsPage() {
               <img src={houseIcon} alt="" />
             </div>
             <p>
-            {homeDetails.address?.street}, {homeDetails.address?.city},{" "}
+              {homeDetails.address?.street}, {homeDetails.address?.city},{" "}
               {homeDetails.address?.postcode}
             </p>
           </div>
@@ -189,7 +208,10 @@ function HomeDetailsPage() {
               </div>
               <div className="item">
                 <label htmlFor="phone">Phone Number</label>
-                <input type="text" placeholder="Enter your Phone number"></input>
+                <input
+                  type="text"
+                  placeholder="Enter your Phone number"
+                ></input>
               </div>
             </div>
 
