@@ -7,7 +7,6 @@ import SearchForRooms from "../../components/SearchForRooms/SearchForRooms";
 import PropertyCards from "../../components/PropertyCards/PropertyCards";
 
 function CityDetails() {
-  const [singleCity, setSingleCity] = useState("");
   const { cityId } = useParams();
   const [cityData, setCityData] = useState([]);
   const [propertyCity, setPropertyCity] = useState("");

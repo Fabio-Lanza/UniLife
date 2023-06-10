@@ -13,7 +13,6 @@ import houseIcon from "../../assets/images/houseIcon.png";
 
 function HomeDetailsPage() {
   const [homeDetails, setHomeDetails] = useState([]);
-  const [cityDetail, setCityDetail] = useState('');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mainImage, setMainImage] = useState(null);
 
@@ -46,20 +45,9 @@ function HomeDetailsPage() {
   }, []);
 
 
-  //   useEffect(() => {
-  //   axios
-  //     .get(`${baseUrl}/cities`)
-  //     .then((res) => {
-  //       console.log(res.data.response);  
-  //       setCityDetail(res.data.response);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
-
-
   return (
     <main className="homeDetails-container">
-      <Link to={`/cityDetails/${detailsId}`} className="back-search">
+      <Link to={`/cityDetails/${homeDetails?.city_id?._id}`} className="back-search">
         <AiOutlineLeft />
         <p>Back to Search</p>
       </Link>

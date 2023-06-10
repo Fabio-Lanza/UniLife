@@ -16,12 +16,10 @@ function SearchCity() {
     axios
       .get(`${baseUrl}/cities?limit=20`)
       .then((res) => {
-        //console.log(res.data.response);
         setAllCities(res.data.response);
       })
       .catch((error) => console.log(error));
   }, []);
-
 
 
   const handleOptionClick = (e) => {
@@ -29,7 +27,6 @@ function SearchCity() {
    
    const matches = allCities.filter((item)=> item.name === e.target.value)
    setCityId(matches[0]._id)
-
   };
 
   

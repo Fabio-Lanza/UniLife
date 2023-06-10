@@ -8,13 +8,6 @@ function CityCards() {
 const [cityCards, setCityCards] = useState([])
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
-// const getCity = async()=> {
-//   await axios.get(`${baseUrl}/cities?limit=9`)
-//   .then((res)=> {
-//     setCityCards(res.data.response)
-//   })
-//   .catch((error)=> console.log(error));
-// }
 
   useEffect(() => {
     axios.get(`${baseUrl}/cities?limit=9`)
