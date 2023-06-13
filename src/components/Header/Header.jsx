@@ -38,10 +38,10 @@ function Header() {
         </Link>
 
         <div className="header-box">
-          <div className="shortlist">
+          <Link to='/favorites' className="shortlist">
             <BsSuitHeart />
-            <span>Shortlist</span>
-          </div>
+            <span>Favorites</span>
+          </Link>
           <div className="contact">
             <BsEnvelope />
             <span onClick={() => setModalIsOpen(true)}>Contact Us</span>
@@ -49,10 +49,10 @@ function Header() {
         </div>
 
         <div className={toggle ? "header-box-mobile" : "hide"}>
-          <div className="shortlist-mobile">
+          <Link to='/favorites' className="shortlist-mobile">
             <BsSuitHeart />
-            <span>Shortlist</span>
-          </div>
+            <span>Favorites</span>
+          </Link>
           <div className="contact-mobile">
             <BsEnvelope />
             <span onClick={() => setModalIsOpen(true)}>Contact Us</span>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomeDetailsPage.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { BiBed } from "react-icons/bi";
@@ -8,15 +8,20 @@ import { MdOutlineKingBed } from "react-icons/md";
 import { FaBath } from "react-icons/fa";
 import { AiOutlineLeft, AiOutlineCheck } from "react-icons/ai";
 import { BsSuitHeart } from "react-icons/bs";
+import { AiFillHeart } from "react-icons/ai";
 import Modal from "react-modal";
 import houseIcon from "../../assets/images/houseIcon.png";
+import { FavoriteContext } from './../../context/favoriteContext';
+
 
 function HomeDetailsPage() {
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const {favorites, addToFavorites, removeFromFavorites} = useContext(FavoriteContext)
   const [homeDetails, setHomeDetails] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mainImage, setMainImage] = useState(null);
-
-  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const [isFavorite, setIsFavorite] = useState(false);
+  
   const { detailsId } = useParams();
 
   const customStyles = {
@@ -43,6 +48,11 @@ function HomeDetailsPage() {
       })
       .catch((error) => console.log(error));
   }, []);
+
+
+  useEffect(() => {
+  setIsFavorite(favorites.find((item)=> item?.id === homeDetails.id));
+  }, [favorites]);
 
 
   return (
@@ -119,8 +129,12 @@ function HomeDetailsPage() {
           </div>
           <div className="buttons">
             <button>
-              <BsSuitHeart />
-              Shortlist
+            {isFavorite ? (
+              <AiFillHeart style={{ color: "var(--secondary)" ,fontSize:"23px" }} onClick={()=>removeFromFavorites(homeDetails?.id)} />
+              ) : (
+              <BsSuitHeart style={{ color: "var(--secondary" ,fontSize:"23px"  }} onClick={()=>addToFavorites(homeDetails)}/>
+            )}
+              Favorites
             </button>
             <button onClick={() => setModalIsOpen(true)}>
               Booking Viewing

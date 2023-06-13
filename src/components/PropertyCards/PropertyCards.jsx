@@ -6,12 +6,9 @@ import { BiBed } from "react-icons/bi";
 import { FaBath } from "react-icons/fa";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
-import testimonial from "../../assets/images/testimonial.png";
 
 
 function PropertyCards({ propertyCityDetails, propertyCity }) {
-
-const baseUrl = import.meta.env.VITE_BASE_URL;
 
 
   return (
@@ -21,9 +18,9 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
       </h2>
 
       <div className="propertyCity-details">
-        {propertyCityDetails.map((cityDetails) => (
-          <div className="property-card" key={cityDetails.id}>
-            <img src={cityDetails.images[0]} />
+        {propertyCityDetails?.map((cityDetails) => (
+          <div className="property-card" key={cityDetails?.id}>
+            <img src={cityDetails?.images[0]} />
 
             <div className="price-accommodation">
               <div>
@@ -59,25 +56,6 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
         ))}
       </div>
 
-      {/* ---Testimonial-Banner */}
-      <div className="testimonial-banner">
-        <div className="left-Side">
-          <h2>Being a student in <span>{propertyCity.city_name}</span></h2>
-          <p>
-            Leeds is a lively and multicultural city with a large student
-            population. It is quite a compact city, so it is easy to get around
-            and has a community feel. Leeds is the perfect mix of city and town
-            life and has something to offer to anyone who calls it home.
-          </p>
-          <p>
-            Leeds is home to three universities, the University of Leeds, Leeds
-            Trinity University and Leeds Beckett University
-          </p>
-        </div>
-        <div className="right-side">
-          <img src={testimonial} alt="" />
-        </div>
-      </div>
     </div>
   );
 }

@@ -4,7 +4,6 @@ import axios from 'axios'
 
 function SearchForRooms({ properties, setProperties, cityId}) {
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  const [cityProperties, setCityProperties] = useState(properties);
   const [queryState, setQueryState] = useState('');
 
   const numCount = [1, 2, 3, 4, 5, 6]
