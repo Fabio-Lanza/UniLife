@@ -12,7 +12,11 @@
   backdrop-filter: blur(10px);
   z-index: 100;
   text-decoration: none;
+<<<<<<< HEAD
   z-index: -1;
+=======
+   z-index: -1;
+>>>>>>> 0a1ac9421e5d451bbc621d1087545143d8810027
 }
 
 .city-content img {
